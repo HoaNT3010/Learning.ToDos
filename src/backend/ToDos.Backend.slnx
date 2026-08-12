@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/ToDos.Backend.API/">
+    <Project Path="ToDos.Backend.API/Todos.Backend.API.csproj" />
+  </Folder>
+</Solution>
