@@ -2,4 +2,5 @@
   <Folder Name="/ToDos.Backend.API/">
     <Project Path="ToDos.Backend.API/Todos.Backend.API.csproj" />
   </Folder>
+  <Project Path="ToDos.Backend.API.UnitTests/ToDos.Backend.API.UnitTests.csproj" />
 </Solution>
