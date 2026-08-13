@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ToDos.Backend.API\Todos.Backend.API.csproj" />
+    <ProjectReference Include="..\ToDos.Backend.API\ToDos.Backend.API.csproj" />
   </ItemGroup>
 
   <ItemGroup>
