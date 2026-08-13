@@ -294,3 +294,6 @@ appsettings.Production.json
 # SonarQube / SonarCloud temporary files
 .sonarqube/
 .sonar/
+
+# Coverage report directory
+coverage-report/
