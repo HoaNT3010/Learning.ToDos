@@ -288,4 +288,9 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# Production configuration file
 appsettings.Production.json
+
+# SonarQube / SonarCloud temporary files
+.sonarqube/
+.sonar/
