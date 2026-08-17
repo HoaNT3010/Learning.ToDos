@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ToDos.Backend.API.Data;
+using ToDos.Backend.API.Middlewares;
 
 namespace ToDos.Backend.API;
 
@@ -13,6 +14,8 @@ public static class ServicesCollectionExtensions
     )
     {
         services.AddOpenApi();
+        services.AddExceptionHandler<GlobalExceptionHandler>();
+        services.AddProblemDetails();
         services.AddDatabase(configuration);
 
         return services;

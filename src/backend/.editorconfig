@@ -74,8 +74,8 @@ dotnet_diagnostic.IDE0005.severity = suggestion
 # Treat unnecessary cast as a warning
 dotnet_diagnostic.IDE0004.severity = warning
 
-# Treat unused parameters as a warning
-dotnet_diagnostic.IDE0060.severity = warning
+# Treat unused parameters as a suggestion
+dotnet_diagnostic.IDE0060.severity = suggestion
 
 # Treat formatting issues as a warning
 dotnet_diagnostic.IDE0055.severity = warning

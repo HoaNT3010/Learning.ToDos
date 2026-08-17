@@ -300,3 +300,6 @@ coverage-report/
 
 # Local .bat scripts
 *.bat
+
+# Local log directory
+logs/
