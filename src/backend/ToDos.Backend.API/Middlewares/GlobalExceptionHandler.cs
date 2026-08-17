@@ -1,5 +1,7 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using ToDos.Backend.API.Utils;
 
 namespace ToDos.Backend.API.Middlewares;
 
@@ -21,17 +23,24 @@ public sealed partial class GlobalExceptionHandler(
         Exception exception,
         CancellationToken cancellationToken)
     {
-        LogUnhandledException(logger, exception);
-
-        var problemDetails = new ProblemDetails
+        ProblemDetails problemDetails;
+        if (exception is ValidationException validationException)
         {
-            Status = StatusCodes.Status500InternalServerError,
-            Title = "Server Error",
-            Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.1",
-            Detail = "An unexpected error occurred on the server."
-        };
+            problemDetails = ProblemDetailsMapper.FromFluentValidation(validationException);
+        }
+        else
+        {
+            LogUnhandledException(logger, exception);
+            problemDetails = new ProblemDetails
+            {
+                Status = StatusCodes.Status500InternalServerError,
+                Title = "Server Error",
+                Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.1",
+                Detail = "An unexpected error occurred on the server."
+            };
+        }
 
-        httpContext.Response.StatusCode = problemDetails.Status.Value;
+        httpContext.Response.StatusCode = problemDetails.Status!.Value;
 
         await httpContext.Response
             .WriteAsJsonAsync(problemDetails, cancellationToken);
