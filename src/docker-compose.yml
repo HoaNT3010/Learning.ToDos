@@ -1,0 +1,28 @@
+name: learning-todos
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: todos_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: todos
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - todos-network
+
+volumes:
+  postgres_data:
+
+networks:
+  todos-network:
+    driver: bridge

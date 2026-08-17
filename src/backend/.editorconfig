@@ -15,7 +15,7 @@ insert_final_newline = true
 
 #### Core Formatting Rules ####
 # Prefer file-scoped namespaces (C# 10+)
-csharp_style_namespace_declarations = file_scoped:warning
+csharp_style_namespace_declarations = file_scoped:suggestion
 
 # Prefer var when the type is obvious
 csharp_style_var_for_built_in_types = true:suggestion
@@ -68,8 +68,8 @@ dotnet_sort_system_directives_first = true
 csharp_using_directive_placement = outside_namespace:warning
 
 #### Code Analysis & Warnings ####
-# Treat unused using statements as a warning
-dotnet_diagnostic.IDE0005.severity = warning
+# Treat unused using statements as a suggestion
+dotnet_diagnostic.IDE0005.severity = suggestion
 
 # Treat unnecessary cast as a warning
 dotnet_diagnostic.IDE0004.severity = warning
