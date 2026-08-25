@@ -38,4 +38,6 @@ public sealed class ToDoItem : BaseEntity<Guid>, IArchivable
             CreatedAt = createTimestamp ?? DateTimeOffset.UtcNow,
         };
     }
+
+    public bool CanMarkAsCompleted() => !IsArchived && !IsDeleted;
 }

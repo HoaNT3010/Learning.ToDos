@@ -8,6 +8,6 @@ public interface IToDoItemService
 {
     Task<ErrorOr<PagedResponse<ToDoItemResponse>>> GetItems(GetToDoItemsRequest request, CancellationToken cancellationToken);
     Task<ErrorOr<ToDoItemResponse>> CreateItem(CreateOrEditItemRequest request, CancellationToken cancellationToken);
-    Task<ErrorOr<ToDoItemResponse>> EditItem(Guid itemId, CreateOrEditItemRequest request, CancellationToken cancellationToken);
-    Task<ErrorOr<bool>> MarkAsCompleted(Guid itemId, CancellationToken cancellationToken);
+    Task<ErrorOr<ToDoItemResponse>> EditItem(string? itemId, CreateOrEditItemRequest request, CancellationToken cancellationToken);
+    Task<ErrorOr<bool>> MarkAsCompleted(string? itemId, CancellationToken cancellationToken);
 }

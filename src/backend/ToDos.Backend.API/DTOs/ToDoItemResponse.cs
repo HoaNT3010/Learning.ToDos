@@ -5,5 +5,6 @@ public record ToDoItemResponse(
     string Name,
     string? Description,
     string Priority,
-    DateTimeOffset CreatedAt
+    DateTimeOffset CreatedAt,
+    bool IsArchived
 );
